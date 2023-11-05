@@ -1,3 +1,18 @@
+
+# For every directory that you want to sort through
+$folderList = @("$Home\Downloads", "$Home\Documents")
+
+# For every executable that you want organized and its destination
+$extHash = @{
+    "txt" = "$Home\Documents";
+    "exe" = "$Home\Documents";
+}
+
+
+
+
+
+#######################################################################################################################################################################################################################################
 param($debug)
 if ($debug) { Write-Host " Debug Enabled`n/-------------\`n" -f Yellow }
 $t = New-Module -AsCustomObject { function findFiles($x, $y, $z) {
@@ -21,11 +36,6 @@ $t = New-Module -AsCustomObject { function findFiles($x, $y, $z) {
     }
 }
 
-$folderList = @("$Home\Downloads", "$Home\Documents")
-$extHash = @{
-    "txt" = "$Home\Documents";
-    "exe" = "$Home\Documents";
-}
 if ($debug) { Write-Host "folderList:" $folderList -f Yellow }
 if ($debug) { $extHash }
 
